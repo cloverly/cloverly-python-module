@@ -1,5 +1,5 @@
 import requests
-
+from .exceptions import CloverlyError
 
 class CloverlyResource:
     base_url = 'https://api.cloverly.com'
@@ -14,6 +14,9 @@ class CloverlyResource:
     @classmethod
     def request(cls, url: str, method: str, data: dict) -> requests.request:
         r = requests.request(method, url, json=data, headers=cls._headers)
+        json = r.json()
+        if json['error']:
+            raise CloverlyError(json['error'])
         return r
 
     @classmethod

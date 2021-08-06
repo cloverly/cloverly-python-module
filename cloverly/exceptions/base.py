@@ -1,0 +1,2 @@
+class CloverlyError(Exception):
+    pass
