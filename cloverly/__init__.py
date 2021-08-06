@@ -1,0 +1,1 @@
+from cloverly.resources import *
