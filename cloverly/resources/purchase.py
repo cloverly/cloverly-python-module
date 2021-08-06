@@ -1,4 +1,4 @@
-from cloverly.base import CloverlyResource
+from ..base import CloverlyResource
 
 
 class Purchase(CloverlyResource):
