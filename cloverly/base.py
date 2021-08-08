@@ -98,6 +98,15 @@ class CloverlyResource:
         cls._headers["Content-type"] = "application/json"
 
     @classmethod
+    def clear_session(cls):
+        """The clear session function, clears the current cloverly session
+
+        Used for ending or clearing a session with the Cloverly API
+        """
+        cls._version = ''
+        cls._headers = {}
+
+    @classmethod
     def extend_endpoint(cls, endpoint: str, **kwargs: iter) -> object:
         """The endpoint extension function, extends the current resource url
 
