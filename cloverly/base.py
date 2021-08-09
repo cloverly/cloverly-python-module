@@ -33,6 +33,11 @@ class CloverlyResource:
     def __init__(self, **kwargs: iter):
         # Initializes all passed in attributes as instance attributes
         for attr in kwargs:
+            if attr[0] == '_':
+                value = kwargs[attr]
+                del kwargs[attr]
+                attr = attr[1:]
+                kwargs[attr] = value
             self.__setattr__(attr, kwargs[attr])
 
     @classmethod
