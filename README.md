@@ -48,7 +48,7 @@ As of 06/08/2021, there are 4 key resource classes:
 
 The resource classes are what allow you to create, update, delete and list resource endpoints. Resources also implement subpoints in accordance with [Cloverly's API documentation](https://www.cloverly.com/carbon-offset-documentation). For example, the /estimates/shipping endpoint can be accessed via the Shipping sub class:
 ```python
-cloverly.Estimate.Shipping(from={"zip":"35209"}, to={"zip":"94043"})
+cloverly.Estimate.Shipping(_from={"zip":"35209"}, _to={"zip":"94043"})
 ```
 The above code snippet would return an instance of the Estimate class. All attributes returned in the expected payload would be able to be accessed as instance attributes, like `estimate.slug`
 
