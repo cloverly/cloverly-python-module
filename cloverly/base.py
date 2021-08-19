@@ -86,7 +86,7 @@ class CloverlyResource:
             return object_list
 
     @classmethod
-    def activate_session(cls, api_key: str, version: str):
+    def activate_session(cls, api_key: str, version: str, base_url: str = 'https://api.cloverly.com'):
         """The session activation function, activates and authenticates a cloverly api session
 
         Used for initializing the Cloverly module and conencting to the API
@@ -94,9 +94,11 @@ class CloverlyResource:
         Args:
             api_key (str): API Key for use with the Cloverly API
             version (str): Cloverly API version to interact with
+            base_url (str): The Cloverly API base url
 
         """
         cls._version = version
+        cls.base_url = base_url
         cls._headers["Authorization"] = f"Bearer {api_key}"
         cls._headers["Content-type"] = "application/json"
 
