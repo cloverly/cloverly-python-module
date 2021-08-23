@@ -207,6 +207,18 @@ class CloverlyResource:
         url = f"{self.base_url}/{self._version}/{self.resource_url}/{self.__getattribute__('slug')}"
         self.request(url, "DELETE", {})
 
+    @classmethod
+    def cancel(cls, slug: str) -> None:
+        """The cancellation function, for cancelling abstract resources
+
+        Deletes the resource that lives at the given slug
+
+        Args:
+            slug: The slug of the resource to delete
+        """
+        e = cls(slug=slug)
+        e.delete()
+
     def save(self, slug: str = None) -> None:
         """The save function, creates and saves a resource
 

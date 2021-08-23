@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.6.0'
+VERSION = '0.7.0'
 DESCRIPTION = 'Cloverly API Module for Python'
 LONG_DESCRIPTION = """
 The Cloverly Python Module is a wrapper around the python requests library.
